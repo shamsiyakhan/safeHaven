@@ -1,0 +1,102 @@
+<div class="find-layout">
+  <!-- Sidebar -->
+  <app-overview></app-overview>
+
+  <!-- Main content -->
+  <div class="main-wrapper">
+    <!-- Top bar -->
+    <div class="topbar">
+      <div></div>
+
+      <div class="topbar-actions">
+        <div class="notification">
+          🔔
+          <span class="badge">3</span>
+        </div>
+        <div class="profile-icon">◌</div>
+      </div>
+    </div>
+
+    <!-- Page content -->
+    <div class="content-area">
+      <!-- Heading -->
+      <div class="page-header">
+        <h1>Find Your Therapist</h1>
+        <p>Browse our network of licensed mental health professionals</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="filter-card">
+        <div class="search-box">
+          <span class="search-icon">⌕</span>
+          <input
+            type="text"
+            [(ngModel)]="searchText"
+            placeholder="Search by name or specialty..."
+          />
+        </div>
+
+        <select [(ngModel)]="selectedSpecialty">
+          <option>All Specialties</option>
+          <option>Cognitive Behavioral Therapy</option>
+          <option>Trauma & PTSD</option>
+          <option>Anxiety & Depression</option>
+        </select>
+
+        <select [(ngModel)]="selectedTime">
+          <option>All Times</option>
+          <option>Available Today</option>
+          <option>Tomorrow</option>
+          <option>This Week</option>
+        </select>
+      </div>
+
+      <!-- Cards -->
+      <div class="therapist-grid">
+        <div class="therapist-card" *ngFor="let therapist of therapists">
+          <div class="availability-badge">
+            {{ therapist.availability }}
+          </div>
+
+          <div class="card-top">
+            <img [src]="therapist.image" [alt]="therapist.name" />
+
+            <div class="therapist-info">
+              <div class="therapist-name">{{ therapist.name }}</div>
+              <div class="therapist-specialty">{{ therapist.specialty }}</div>
+
+              <div class="rating-row">
+                <span class="star">★</span>
+                <span>{{ therapist.rating }}</span>
+                <span>({{ therapist.reviews }})</span>
+                <span class="dot">•</span>
+                <span>{{ therapist.experience }}</span>
+              </div>
+
+              <p class="description">
+                {{ therapist.description }}
+              </p>
+
+              <div class="tag-row">
+                <span class="tag">◫ Video Sessions</span>
+                <span class="tag">⌖ {{ therapist.language }}</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <div class="price">
+              <span class="amount">$ {{ therapist.price }}</span>
+              <span class="per">/session</span>
+            </div>
+
+            <div class="actions">
+              <button class="outline-btn">View Profile</button>
+              <button class="primary-btn">Book Session</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

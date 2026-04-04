@@ -1,0 +1,28 @@
+<div class="sidebar">
+  <!-- Logo -->
+  <div class="logo-section">
+    <div class="logo-box">SH</div>
+    <div class="logo-text">SafeHaven</div>
+  </div>
+
+  <!-- Menu -->
+  <div class="menu-list">
+    <div
+      class="menu-item"
+      *ngFor="let item of menuItems"
+      [class.activeClass]="isActive(item.route)"
+      [class.inactiveClass]="!isActive(item.route)"
+      (click)="redirect(item.route)"
+    >
+      <span class="menu-icon">{{ item.icon }}</span>
+      <span class="menu-label">{{ item.label }}</span>
+    </div>
+  </div>
+
+  <!-- Support -->
+  <div class="support-box">
+    <div class="support-title">Need Help?</div>
+    <div class="support-subtitle">Our support team is available 24/7</div>
+    <button class="support-btn">Contact Support</button>
+  </div>
+</div>

@@ -1,0 +1,124 @@
+<div class="dashboard-layout">
+  <!-- Sidebar -->
+  <app-overview></app-overview>
+
+  <!-- Main content -->
+  <div class="main-wrapper">
+    <!-- Top bar -->
+    <div class="topbar">
+      <div></div>
+
+      <div class="topbar-actions">
+        <div class="notification">
+          🔔
+          <span class="badge">3</span>
+        </div>
+        <div class="profile-icon">◌</div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="content-area">
+      <div class="welcome-section">
+        <h1>Welcome back, Sarah</h1>
+        <p>Here's what's happening with your mental wellness journey today.</p>
+      </div>
+
+      <!-- Stat cards -->
+      <div class="stats-grid">
+        <div class="stat-card" *ngFor="let stat of stats">
+          <div class="stat-top">
+            <span class="stat-title">{{ stat.title }}</span>
+            <span class="stat-icon">{{ stat.icon }}</span>
+          </div>
+
+          <div class="stat-value">{{ stat.value }}</div>
+          <div class="stat-sub">{{ stat.subText }}</div>
+        </div>
+      </div>
+
+      <!-- Appointments -->
+      <div class="section-card appointments-card">
+        <div class="section-header">
+          <h3>Upcoming Appointments</h3>
+          <p>Your scheduled therapy sessions</p>
+        </div>
+
+        <div class="appointment-item" *ngFor="let item of appointments">
+          <div class="appointment-left">
+            <img [src]="item.image" [alt]="item.name" />
+            <div class="appointment-info">
+              <div class="doctor-name">{{ item.name }}</div>
+              <div class="doctor-specialty">{{ item.specialty }}</div>
+              <div class="doctor-time">{{ item.time }}</div>
+            </div>
+          </div>
+
+          <button
+            class="appointment-btn"
+            [class.primary]="item.primary"
+          >
+            {{ item.action }}
+          </button>
+        </div>
+      </div>
+
+      <!-- Bottom row -->
+      <div class="bottom-grid">
+        <!-- Wellness goals -->
+        <div class="section-card goals-card">
+          <div class="section-header">
+            <h3>Wellness Goals</h3>
+            <p>Track your mental health progress</p>
+          </div>
+
+          <div class="goal-item">
+            <div class="goal-row">
+              <span>Daily Meditation</span>
+              <span>5/7 days</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill w-70"></div>
+            </div>
+          </div>
+
+          <div class="goal-item">
+            <div class="goal-row">
+              <span>Mood Journaling</span>
+              <span>6/7 days</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill w-85"></div>
+            </div>
+          </div>
+
+          <div class="goal-item">
+            <div class="goal-row">
+              <span>Sleep Quality</span>
+              <span>7.5 hrs avg</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill w-95"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Resources -->
+        <div class="section-card resources-card">
+          <div class="section-header">
+            <h3>Recommended Resources</h3>
+            <p>Personalized content for you</p>
+          </div>
+
+          <div class="resource-item" *ngFor="let resource of resources">
+            <div class="resource-icon">▣</div>
+            <div class="resource-info">
+              <div class="resource-title">{{ resource.title }}</div>
+              <div class="resource-type">{{ resource.type }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

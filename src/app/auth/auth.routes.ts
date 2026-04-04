@@ -5,11 +5,7 @@ import { ForPasswordComponent } from './for-password/for-password.component';
 
 
 export const AUTH_ROUTES: Routes = [
-  {
-    path: '',
-    redirectTo: 'login',
-    pathMatch: 'full'
-  },
+  
   {
     path: 'login',
     component: LoginComponent
