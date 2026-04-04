@@ -1,1 +1,199 @@
-<p>signup works!</p>
+<div class="signup-page">
+  <!-- LEFT IMAGE SECTION -->
+  <div class="left-panel">
+    <div class="image-overlay"></div>
+
+    <div class="community-content">
+      <h2 class="community-title">Join our community</h2>
+
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="check-icon">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <h4>Professional therapists</h4>
+            <p>Connect with licensed mental health professionals</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="check-icon">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <h4>Safe & confidential</h4>
+            <p>Your privacy and security are our top priorities</p>
+          </div>
+        </div>
+
+        <div class="feature-item">
+          <div class="check-icon">
+            <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3">
+              <path d="M20 6L9 17l-5-5"></path>
+            </svg>
+          </div>
+          <div class="feature-text">
+            <h4>24/7 support</h4>
+            <p>Get help whenever you need it, day or night</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT FORM SECTION -->
+  <div class="right-panel">
+    <div class="form-wrapper">
+      <div class="brand">SafeHaven</div>
+
+      <h1 class="title">Create an account</h1>
+      <p class="subtitle">Start your journey to better mental health</p>
+
+      <form class="signup-form" (ngSubmit)="onSignup()">
+        <!-- Full Name -->
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <div class="input-wrapper">
+            <input
+              id="fullName"
+              type="text"
+              [(ngModel)]="fullName"
+              name="fullName"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <div class="input-wrapper">
+            <input
+              id="email"
+              type="email"
+              [(ngModel)]="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="input-wrapper password-wrapper">
+            <input
+              id="password"
+              [type]="showPassword ? 'text' : 'password'"
+              [(ngModel)]="password"
+              name="password"
+              placeholder="Create a password"
+              required
+            />
+
+            <button type="button" class="eye-btn" (click)="togglePassword()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="form-group">
+          <label for="confirmPassword">Confirm Password</label>
+          <div class="input-wrapper password-wrapper">
+            <input
+              id="confirmPassword"
+              [type]="showConfirmPassword ? 'text' : 'password'"
+              [(ngModel)]="confirmPassword"
+              name="confirmPassword"
+              placeholder="Confirm your password"
+              required
+            />
+
+            <button type="button" class="eye-btn" (click)="toggleConfirmPassword()">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Terms -->
+        <label class="terms-check">
+          <input type="checkbox" [(ngModel)]="agreeTerms" name="agreeTerms" />
+          <span>
+            I agree to the
+            <a href="javascript:void(0)">Terms of Service</a>
+            and
+            <a href="javascript:void(0)">Privacy Policy</a>
+          </span>
+        </label>
+
+        <!-- Create Account -->
+        <button type="submit" class="create-btn">Create account</button>
+      </form>
+
+      <!-- Divider -->
+      <div class="divider">
+        <span class="line"></span>
+        <span class="divider-text">Or sign up with</span>
+        <span class="line"></span>
+      </div>
+
+      <!-- Google Button -->
+      <button type="button" class="google-btn" (click)="onGoogleSignup()">
+        <span class="google-icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 48 48"
+            width="20"
+            height="20"
+          >
+            <path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303C33.659 32.657 29.221 36 24 36c-6.627 0-12-5.373-12-12S17.373 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.27 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/>
+            <path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 16.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.27 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/>
+            <path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238C29.145 35.091 26.715 36 24 36c-5.2 0-9.627-3.316-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/>
+            <path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303c-.791 2.237-2.231 4.166-4.084 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/>
+          </svg>
+        </span>
+        <span>Continue with Google</span>
+      </button>
+
+      <!-- Sign In -->
+      <p class="signin-text">
+        Already have an account?
+        <a [routerLink]="['/login']">Sign in</a>
+      </p>
+    </div>
+  </div>
+</div>
