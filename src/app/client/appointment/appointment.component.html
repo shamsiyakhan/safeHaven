@@ -1,0 +1,64 @@
+<div class="appointments-container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h2>Appointments</h2>
+      <p>Manage your therapy sessions</p>
+    </div>
+
+    <button class="primary-btn">
+      + Book New Session
+    </button>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab active">Upcoming</button>
+    <button class="tab">Past Sessions</button>
+  </div>
+
+  <!-- Appointment Cards -->
+  <div class="card" *ngFor="let appt of appointments">
+
+    <div class="left">
+      <img [src]="appt.image" alt="doctor" />
+    </div>
+
+    <div class="middle">
+      <h3>{{ appt.name }}</h3>
+      <p class="specialization">{{ appt.specialization }}</p>
+
+      <div class="details">
+        <span>📅 {{ appt.date }}</span>
+        <span>⏰ {{ appt.time }}</span>
+        <span>🎥 Video Call</span>
+      </div>
+
+      <div class="actions">
+        <span class="status">Confirmed</span>
+
+        <button *ngIf="appt.joinable" class="join-btn">
+          Join Session
+        </button>
+      </div>
+    </div>
+
+    <div class="right">
+      ⋮
+    </div>
+
+  </div>
+
+  <!-- Help Section -->
+  <div class="help-card">
+    <h3>Need Help?</h3>
+    <p>Have questions about your appointments?</p>
+
+    <div class="help-actions">
+      <button class="secondary-btn">View Cancellation Policy</button>
+      <button class="secondary-btn">Contact Support</button>
+    </div>
+  </div>
+
+</div>

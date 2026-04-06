@@ -1,0 +1,99 @@
+.reports-container {
+  padding: 24px;
+  background: #f8fafc;
+}
+
+/* Clients */
+.clients {
+  display: flex;
+  gap: 16px;
+}
+
+.client-card {
+  flex: 1;
+  display: flex;
+  gap: 10px;
+  padding: 14px;
+  border-radius: 12px;
+  background: #e5e7eb;
+  cursor: pointer;
+
+  &.active {
+    background: #111827;
+    color: white;
+  }
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #111827;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.tag {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.green {
+  color: #10b981;
+  display: block;
+  margin-top: 4px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+
+  button {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: none;
+    background: #e5e7eb;
+
+    &.active {
+      background: #111827;
+      color: white;
+    }
+  }
+}
+
+/* Chart */
+.chart {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.graph {
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #e5e7eb;
+  margin-top: 10px;
+}

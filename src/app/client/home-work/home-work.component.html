@@ -1,0 +1,97 @@
+<div class="homework-container">
+
+  <!-- Header -->
+  <div class="header">
+    <h2>Homework Assignments</h2>
+    <p>View tasks assigned by your therapist and track your progress</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="card">
+      <p>Active Tasks</p>
+      <h3>{{ stats.active }}</h3>
+    </div>
+
+    <div class="card">
+      <p>Completed</p>
+      <h3>{{ stats.completed }}</h3>
+    </div>
+
+    <div class="card">
+      <p>Completion Rate</p>
+      <h3>{{ stats.rate }}</h3>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button 
+      [class.active]="activeTab === 'active'"
+      (click)="activeTab = 'active'">
+      Active Tasks
+    </button>
+
+    <button 
+      [class.active]="activeTab === 'completed'"
+      (click)="activeTab = 'completed'">
+      Completed
+    </button>
+  </div>
+
+  <!-- Tasks -->
+  <div class="task-card" *ngFor="let task of tasks">
+
+    <!-- Top -->
+    <div class="top">
+      <div>
+        <h3>
+          {{ task.title }}
+          <span class="badge">{{ task.status }}</span>
+        </h3>
+        <p class="sub">Assigned by {{ task.therapist }}</p>
+        <p class="sub">Due: {{ task.due }}</p>
+      </div>
+
+      <button class="secondary-btn">View Details →</button>
+    </div>
+
+    <!-- Description -->
+    <p class="desc">{{ task.description }}</p>
+
+    <!-- Progress -->
+    <div class="progress-section">
+      <div class="progress-label">
+        <span>Progress</span>
+        <span>{{ task.progress }} of {{ task.total }} days</span>
+      </div>
+
+      <div class="progress-bar">
+        <div class="fill"
+             [style.width.%]="getProgressPercent(task)">
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button class="primary-btn">Update Progress</button>
+      <button class="outline-btn">Mark as Complete</button>
+    </div>
+
+  </div>
+
+  <!-- Tips -->
+  <div class="tips">
+    <h3>Homework Tips</h3>
+
+    <ul>
+      <li>Set aside dedicated time each day</li>
+      <li>Be honest in your reflections</li>
+      <li>Ask therapist if you’re stuck</li>
+      <li>Track progress consistently</li>
+      <li>Celebrate small wins 🎉</li>
+    </ul>
+  </div>
+
+</div>

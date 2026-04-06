@@ -12,11 +12,13 @@ import { Router, RouterModule } from '@angular/router';
 export class OverviewComponent {
   menuItems = [
     { label: 'Dashboard', icon: '⌂', route: 'dashboard' },
-    { label: 'Find Therapist', icon: '◫', route: 'find-therapist' },
+    { label: 'Clients', icon: '◫', route: 'clients' },
     { label: 'Appointments', icon: '◷', route: 'appointment' },
-    { label: 'Messages', icon: '▢', route: 'messages' },
-    { label: 'AI ChatBot 24/7', icon: '◉', route: 'chatbot' },
-    { label: 'Journal', icon: '◌', route: 'journal' },
+    { label: 'Session Request', icon: '▢', route: 'session-request' },
+    { label: 'Session Notes', icon: '◉', route: 'session-notes' },
+
+    { label: 'Home Work Task', icon: '◌', route: 'home-task' },
+    
     { label: 'Self-Assessment', icon: '☰', route: 'self-assessment' },
     { label: 'Homework', icon: '☑', route: 'homework' },
     { label: 'Content Library', icon: '♡', route: 'content-library' },
@@ -28,11 +30,11 @@ export class OverviewComponent {
   constructor(private router: Router) {}
 
   redirect(route: string): void {
-    this.router.navigate([`/client/${route}`]);
+    this.router.navigate([`/therapist/${route}`]);
   }
 
   isActive(route: string): boolean {
-    return this.router.url.includes(`/client/${route}`);
+    return this.router.url.includes(`/therapist/${route}`);
   }
 
   logout(): void {

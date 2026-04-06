@@ -1,0 +1,135 @@
+.groups-container {
+  padding: 24px;
+  background: #f8fafc;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    color: #6b7280;
+  }
+}
+
+.primary-btn {
+  background: #0f766e;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Banner */
+.banner {
+  background: #e0f2fe;
+  border: 1px solid #7dd3fc;
+  padding: 16px;
+  border-radius: 12px;
+  margin: 16px 0;
+
+  p {
+    font-size: 14px;
+    color: #0369a1;
+  }
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+
+  button {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: none;
+    background: #e5e7eb;
+    cursor: pointer;
+
+    &.active {
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+  }
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+/* Group Card */
+.group-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.desc {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.meta {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  margin-top: 6px;
+  color: #6b7280;
+}
+
+.badge {
+  background: #ef4444;
+  color: white;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 10px;
+  margin-left: 8px;
+}
+
+/* Actions */
+.actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.outline-btn {
+  border: 1px solid #d1d5db;
+  background: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Guidelines */
+.guidelines {
+  margin-top: 20px;
+  background: #d1fae5;
+  padding: 16px;
+  border-radius: 12px;
+
+  ul {
+    margin-top: 8px;
+    padding-left: 18px;
+  }
+}

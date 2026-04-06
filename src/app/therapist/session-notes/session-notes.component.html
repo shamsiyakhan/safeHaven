@@ -1,0 +1,71 @@
+<div class="notes-container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h2>Session Notes</h2>
+      <p>Document and manage therapy session notes</p>
+    </div>
+
+    <button class="primary-btn">+ New Note</button>
+  </div>
+
+  <div class="main-grid">
+
+    <!-- LEFT: Notes List -->
+    <div class="notes-list">
+
+      <input class="search" placeholder="Search notes..." />
+
+      <div 
+        class="note-item"
+        *ngFor="let n of notes"
+        (click)="selectNote(n)"
+        [class.active]="selectedNote === n"
+      >
+        <div class="top">
+          <h4>{{ n.name }}</h4>
+          <span class="status" [class]="n.status">{{ n.status }}</span>
+        </div>
+
+        <p>{{ n.type }}</p>
+
+        <div class="meta">
+          <span>📅 {{ n.date }}</span>
+          <span>⏱ {{ n.duration }}</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Detail -->
+    <div class="note-detail" *ngIf="selectedNote; else empty">
+
+      <h3>{{ selectedNote.name }}</h3>
+      <p>{{ selectedNote.type }}</p>
+
+      <div class="detail-meta">
+        <span>{{ selectedNote.date }}</span>
+        <span>{{ selectedNote.duration }}</span>
+      </div>
+
+      <textarea placeholder="Write session notes here..."></textarea>
+
+      <div class="actions">
+        <button class="primary-btn">Save</button>
+        <button class="outline-btn">Cancel</button>
+      </div>
+
+    </div>
+
+    <!-- Empty State -->
+    <ng-template #empty>
+      <div class="empty">
+        <h3>No Note Selected</h3>
+        <p>Select a session note from the list to view and edit details</p>
+      </div>
+    </ng-template>
+
+  </div>
+
+</div>

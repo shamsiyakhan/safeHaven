@@ -16,6 +16,12 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./client/client.routes').then((m) => m.CLIENT_ROUTES)
   },
+    {
+    path: 'therapist',
+    loadChildren: () =>
+      import('./therapist/therapist.routes').then((m) => m.Therapist_Route)
+  },
+  
   {
     path: '**',
     redirectTo: 'auth/login'

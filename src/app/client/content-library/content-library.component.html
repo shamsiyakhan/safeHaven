@@ -1,0 +1,65 @@
+<div class="library-container">
+
+  <!-- Header -->
+  <div class="header">
+    <h2>Content Library</h2>
+    <p>Access podcasts, motivational talks, and educational videos</p>
+  </div>
+
+  <!-- Filters -->
+  <div class="filters">
+
+    <input
+      type="text"
+      placeholder="Search for topics or speakers..."
+      [(ngModel)]="searchText"
+    />
+
+    <select [(ngModel)]="selectedCategory">
+      <option>All Categories</option>
+      <option>Anxiety</option>
+      <option>Mindfulness</option>
+      <option>Sleep</option>
+    </select>
+
+    <select [(ngModel)]="selectedSort">
+      <option>Newest First</option>
+      <option>Most Popular</option>
+    </select>
+
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button [class.active]="activeTab==='podcasts'" (click)="activeTab='podcasts'">Podcasts</button>
+    <button [class.active]="activeTab==='talks'" (click)="activeTab='talks'">Motivational Talks</button>
+    <button [class.active]="activeTab==='saved'" (click)="activeTab='saved'">My Saved</button>
+  </div>
+
+  <!-- Cards -->
+  <div class="card" *ngFor="let item of contents">
+
+    <img [src]="item.image" />
+
+    <div class="content">
+
+      <h3>{{ item.title }}</h3>
+      <p class="host">Hosted by {{ item.host }}</p>
+
+      <div class="meta">
+        <span>⏱ {{ item.duration }}</span>
+        <span>▶ {{ item.plays }} plays</span>
+        <span class="tag">{{ item.tag }}</span>
+      </div>
+
+      <button class="primary-btn">▶ Listen Now</button>
+    </div>
+
+    <!-- Save Icon -->
+    <div class="bookmark" (click)="toggleSave(item)">
+      <span [class.saved]="item.saved">🔖</span>
+    </div>
+
+  </div>
+
+</div>

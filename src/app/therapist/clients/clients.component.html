@@ -1,0 +1,79 @@
+<div class="clients-container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h2>Client Management</h2>
+      <p>Manage and view all your clients</p>
+    </div>
+
+    <button class="primary-btn">+ Add New Client</button>
+  </div>
+
+  <!-- Search -->
+  <div class="search-bar">
+    <input
+      type="text"
+      placeholder="Search clients by name, diagnosis, or email..."
+      [(ngModel)]="searchText"
+    />
+    <button class="filter-btn">Filter</button>
+  </div>
+
+  <!-- Grid -->
+  <div class="grid">
+
+    <div class="card" *ngFor="let c of clients">
+
+      <!-- Top -->
+      <div class="top">
+        <div class="user">
+          <div class="avatar">{{ c.initials }}</div>
+          <div>
+            <h3>{{ c.name }}</h3>
+            <p>{{ c.age }} years old</p>
+          </div>
+        </div>
+
+        <div class="status">{{ c.status }}</div>
+      </div>
+
+      <!-- Info -->
+      <div class="info">
+        <p>📄 Diagnosis: {{ c.diagnosis }}</p>
+        <p>✉️ {{ c.email }}</p>
+        <p>📞 {{ c.phone }}</p>
+      </div>
+
+      <!-- Divider -->
+      <div class="divider"></div>
+
+      <!-- Sessions -->
+      <div class="sessions">
+        <div>
+          <p class="label">Last Session</p>
+          <span>{{ c.lastSession }}</span>
+        </div>
+
+        <div>
+          <p class="label">Next Session</p>
+          <span>{{ c.nextSession }}</span>
+        </div>
+
+        <div>
+          <p class="label">Total Sessions</p>
+          <span>{{ c.totalSessions }}</span>
+        </div>
+      </div>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="outline-btn">📅 Schedule</button>
+        <button class="outline-btn">💬 Message</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,120 @@
+.appointments-container {
+  padding: 24px;
+  background: #f8fafc;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    color: #6b7280;
+  }
+}
+
+.primary-btn {
+  background: #111827;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* Grid */
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+/* Calendar */
+.calendar {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.week-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+/* Days */
+.days {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.day {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  background: #f1f5f9;
+
+  &.active {
+    background: #111827;
+    color: white;
+  }
+}
+
+/* Slots */
+.slots {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.slot {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.time {
+  width: 80px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.content {
+  flex: 1;
+  border: 1px dashed #e5e7eb;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+  color: #9ca3af;
+}
+
+.booking {
+  flex: 1;
+  background: #e5e7eb;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.status {
+  background: #d1fae5;
+  color: #065f46;
+  padding: 3px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+/* Upcoming */
+.upcoming {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.card {
+  background: #f9fafb;
+  padding: 12px;
+  border-radius: 10px;
+  margin-top: 10px;
+}

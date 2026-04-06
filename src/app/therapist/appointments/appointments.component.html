@@ -1,0 +1,74 @@
+<div class="appointments-container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h2>Appointment Scheduler</h2>
+      <p>Manage your therapy sessions and schedule</p>
+    </div>
+
+    <button class="primary-btn">+ New Appointment</button>
+  </div>
+
+  <div class="main-grid">
+
+    <!-- LEFT: Calendar -->
+    <div class="calendar">
+
+      <!-- Week Header -->
+      <div class="week-header">
+        <h3>Weekly Schedule</h3>
+        <span>Feb 23 - Mar 1, 2026</span>
+      </div>
+
+      <!-- Days -->
+      <div class="days">
+        <div 
+          *ngFor="let d of days"
+          class="day"
+          [class.active]="d.active">
+          <p>{{ d.day }}</p>
+          <h4>{{ d.date }}</h4>
+        </div>
+      </div>
+
+      <!-- Time Slots -->
+      <div class="slots">
+
+        <div class="slot" *ngFor="let slot of timeSlots">
+
+          <div class="time">{{ slot.time }}</div>
+
+          <div class="content" *ngIf="slot.available">
+            Available
+          </div>
+
+          <div class="booking" *ngIf="!slot.available">
+            <h4>{{ slot.name }}</h4>
+            <p>{{ slot.type }}</p>
+            <span class="status">confirmed</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Upcoming -->
+    <div class="upcoming">
+
+      <h3>Upcoming Appointments</h3>
+
+      <div class="card" *ngFor="let u of upcoming">
+        <h4>{{ u.name }}</h4>
+        <p>{{ u.type }}</p>
+        <span>📅 Feb 25 · {{ u.time }}</span>
+        <span class="status">confirmed</span>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

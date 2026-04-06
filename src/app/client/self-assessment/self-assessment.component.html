@@ -1,0 +1,74 @@
+<div class="assessment-container">
+
+  <!-- Header -->
+  <div class="header">
+    <h2>Self-Assessment Tools</h2>
+    <p>Track your mental health with standardized questionnaires</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+
+    <div class="card">
+      <p>Assessments Taken</p>
+      <h3>{{ stats.total }}</h3>
+    </div>
+
+    <div class="card">
+      <p>Current Streak</p>
+      <h3>{{ stats.streak }}</h3>
+    </div>
+
+    <div class="card">
+      <p>Overall Trend</p>
+      <h3 class="green">{{ stats.trend }}</h3>
+    </div>
+
+  </div>
+
+  <!-- Info Banner -->
+  <div class="info-banner">
+    <h4>About Self-Assessments</h4>
+    <p>
+      These questionnaires are clinical screening tools used by mental health professionals.
+      Your responses help track progress and inform treatment decisions.
+    </p>
+  </div>
+
+  <!-- Section -->
+  <h3 class="section-title">Available Assessments</h3>
+
+  <!-- Cards -->
+  <div class="assessment-card"
+       *ngFor="let item of assessments">
+
+    <div class="top">
+      <div>
+        <h3>{{ item.title }}</h3>
+        <span class="badge">{{ item.type }}</span>
+        <p class="desc">{{ item.description }}</p>
+
+        <div class="meta">
+          <span>📋 {{ item.questions }} questions</span>
+          <span>⏱ {{ item.duration }}</span>
+          <span>📅 {{ item.frequency }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Last assessment -->
+    <div class="last">
+      <div>
+        <p class="label">Last Assessment</p>
+        <p>{{ item.lastDate }} · Score: {{ item.score }}</p>
+      </div>
+
+      <span class="history">View History →</span>
+    </div>
+
+    <!-- Action -->
+    <button class="primary-btn">Take Assessment</button>
+
+  </div>
+
+</div>

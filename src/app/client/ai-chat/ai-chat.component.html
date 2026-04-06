@@ -1,0 +1,74 @@
+<div class="ai-container">
+
+  <!-- Header -->
+  <div class="page-header">
+    <h2>AI ChatBot Therapist</h2>
+    <p>24/7 instant emotional support and general mental health guidance</p>
+  </div>
+
+  <!-- Warning -->
+  <div class="warning">
+    <strong>Important: This is not a replacement for professional therapy</strong>
+    <p>
+      The AI ChatBot provides first-level support and coping strategies.
+      For serious concerns or crisis situations, contact your therapist.
+    </p>
+  </div>
+
+  <!-- Chat Card -->
+  <div class="chat-card">
+
+    <!-- Chat Header -->
+    <div class="chat-header">
+      <div class="bot-info">
+        <div class="avatar">🤖</div>
+        <div>
+          <h4>AI Therapist</h4>
+          <span class="online">● Online 24/7</span>
+          <p>Always here to listen and support you</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Body -->
+    <div class="chat-body">
+      <div *ngFor="let msg of messages"
+           [ngClass]="msg.sender === 'user' ? 'msg user' : 'msg bot'">
+
+        <div class="bubble">
+          {{ msg.text }}
+          <span class="time">{{ msg.time }}</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Suggestions -->
+    <div class="suggestions">
+      <p>Suggested topics:</p>
+      <div class="chips">
+        <button *ngFor="let s of suggestions"
+                (click)="useSuggestion(s)">
+          {{ s }}
+        </button>
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div class="chat-input">
+      <input
+        type="text"
+        [(ngModel)]="messageText"
+        placeholder="Type your message here..."
+        (keyup.enter)="sendMessage()"
+      />
+      <button (click)="sendMessage()">➤</button>
+    </div>
+
+    <p class="footer-text">
+      Press Enter to send, Shift+Enter for new line
+    </p>
+
+  </div>
+
+</div>

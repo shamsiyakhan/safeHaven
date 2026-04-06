@@ -1,0 +1,97 @@
+<div class="emergency-container">
+
+  <!-- Header -->
+  <div class="header">
+    <h2>Emergency Help & Crisis Support</h2>
+    <p>Immediate assistance and resources for mental health crises</p>
+  </div>
+
+  <!-- ALERT -->
+  <div class="alert">
+    <h4>⚠️ If you are in immediate danger, call 911</h4>
+    <p>This page provides support resources. For life-threatening emergencies, contact services immediately.</p>
+    <button class="danger-btn">📞 Call 911 Now</button>
+  </div>
+
+  <!-- HOTLINES -->
+  <div class="section">
+    <h3>24/7 Crisis Hotlines</h3>
+
+    <div class="hotline" *ngFor="let h of hotlines">
+      <div>
+        <h4>{{ h.title }} <span class="badge">24/7</span></h4>
+        <p class="number">{{ h.number }}</p>
+        <p class="desc">{{ h.desc }}</p>
+      </div>
+
+      <button class="primary-btn">📞 Call Now</button>
+    </div>
+  </div>
+
+  <!-- COPING -->
+  <div class="section">
+    <h3>Immediate Coping Strategies</h3>
+
+    <div class="grid">
+
+      <div class="coping-card">
+        <h4>💚 Deep Breathing</h4>
+        <p>Inhale 4 sec, hold 4 sec, exhale 6 sec</p>
+      </div>
+
+      <div class="coping-card">
+        <h4>🧠 Grounding (5-4-3-2-1)</h4>
+        <p>5 see, 4 touch, 3 hear, 2 smell, 1 taste</p>
+      </div>
+
+      <div class="coping-card">
+        <h4>📞 Reach Out</h4>
+        <p>Talk to a friend, family or therapist</p>
+      </div>
+
+      <div class="coping-card">
+        <h4>🏠 Safe Environment</h4>
+        <p>Move to a calm and safe place</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- THERAPIST -->
+  <div class="therapist">
+    <h3>Contact Your Therapist</h3>
+
+    <div class="therapist-card">
+      <div>
+        <h4>Dr. Emily Chen</h4>
+        <p>Your Assigned Therapist</p>
+      </div>
+
+      <div class="actions">
+        <button class="outline-btn">💬 Send Message</button>
+        <button class="outline-btn">📞 Emergency Contact</button>
+      </div>
+    </div>
+
+    <p class="note">
+      For after-hours emergencies, use crisis hotlines above.
+    </p>
+  </div>
+
+  <!-- RESOURCES -->
+  <div class="section">
+    <h3>Crisis Support Resources</h3>
+
+    <div class="resource">Understanding Crisis Situations →</div>
+    <div class="resource">Creating a Safety Plan →</div>
+    <div class="resource">Supporting Someone in Crisis →</div>
+
+  </div>
+
+  <!-- FINAL MESSAGE -->
+  <div class="final-note">
+    <h4>⚠️ Remember: You're Not Alone</h4>
+    <p>Help is always available. Reaching out is a sign of strength.</p>
+  </div>
+
+</div>

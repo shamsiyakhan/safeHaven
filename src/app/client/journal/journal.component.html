@@ -1,0 +1,76 @@
+<div class="journal-container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h2>Personal Journal</h2>
+      <p>Write, edit, and reflect on your emotional journey</p>
+    </div>
+
+    <button class="primary-btn">+ New Entry</button>
+  </div>
+
+  <!-- Search + Filter -->
+  <div class="filters">
+
+    <input
+      type="text"
+      placeholder="Search entries by title or content..."
+      [(ngModel)]="searchText"
+    />
+
+    <select [(ngModel)]="selectedMood">
+      <option>All Moods</option>
+      <option>😊 Happy</option>
+      <option>😐 Neutral</option>
+      <option>😔 Sad</option>
+    </select>
+
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+
+    <div class="stat-card">
+      <p>Total Entries</p>
+      <h3>{{ stats.total }}</h3>
+    </div>
+
+    <div class="stat-card">
+      <p>Current Streak</p>
+      <h3>{{ stats.streak }} days</h3>
+    </div>
+
+    <div class="stat-card">
+      <p>Most Common Mood</p>
+      <h3>{{ stats.mood }}</h3>
+    </div>
+
+  </div>
+
+  <!-- Entries -->
+  <div class="entry"
+       *ngFor="let entry of entries">
+
+    <div class="entry-header">
+      <div class="title">
+        <span class="emoji">{{ entry.mood }}</span>
+        <h3>{{ entry.title }}</h3>
+      </div>
+
+      <div class="actions">
+        ✏️ 🗑️
+      </div>
+    </div>
+
+    <div class="date">📅 {{ entry.date }}</div>
+
+    <p class="content">{{ entry.content }}</p>
+
+    <div class="tags">
+      <span *ngFor="let tag of entry.tags">{{ tag }}</span>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,85 @@
+<div class="groups-container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h2>Support Groups</h2>
+      <p>Join moderated group discussions and connect with others</p>
+    </div>
+
+    <button class="primary-btn">+ Request New Group</button>
+  </div>
+
+  <!-- Banner -->
+  <div class="banner">
+    <h4>🔒 Safe & Moderated Spaces</h4>
+    <p>
+      All support groups are professionally moderated to ensure a safe,
+      respectful, and confidential environment.
+    </p>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button [class.active]="activeTab==='my'" (click)="activeTab='my'">My Groups</button>
+    <button [class.active]="activeTab==='discover'" (click)="activeTab='discover'">Discover Groups</button>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="card">
+      <p>Groups Joined</p>
+      <h3>{{ stats.joined }}</h3>
+    </div>
+
+    <div class="card">
+      <p>Unread Messages</p>
+      <h3>{{ stats.unread }}</h3>
+    </div>
+
+    <div class="card">
+      <p>This Week</p>
+      <h3>{{ stats.weekly }} messages</h3>
+    </div>
+  </div>
+
+  <!-- Group Cards -->
+  <div class="group-card" *ngFor="let group of groups">
+
+    <div class="top">
+      <div class="info">
+        <h3>
+          {{ group.name }}
+          <span class="badge">{{ group.newMessages }} new</span>
+        </h3>
+
+        <p class="desc">{{ group.description }}</p>
+
+        <div class="meta">
+          <span>👥 {{ group.members }} members</span>
+          <span>👨‍⚕️ {{ group.moderator }}</span>
+          <span>🟢 Active {{ group.active }}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button class="primary-btn">💬 View Discussions</button>
+      <button class="outline-btn">Leave Group</button>
+    </div>
+
+  </div>
+
+  <!-- Guidelines -->
+  <div class="guidelines">
+    <h3>Community Guidelines</h3>
+    <ul>
+      <li>Be respectful and supportive</li>
+      <li>Maintain confidentiality</li>
+      <li>No harmful or abusive content</li>
+      <li>Follow moderator instructions</li>
+    </ul>
+  </div>
+
+</div>

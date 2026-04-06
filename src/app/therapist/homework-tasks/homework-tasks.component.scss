@@ -1,0 +1,148 @@
+.homework-container {
+  padding: 24px;
+  background: #f8fafc;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    color: #6b7280;
+  }
+}
+
+.primary-btn {
+  background: #111827;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+
+  button {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: none;
+    background: #e5e7eb;
+
+    &.active {
+      background: #111827;
+      color: white;
+    }
+  }
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+/* Card */
+.task-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+/* Top */
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.status {
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 8px;
+
+  &.completed {
+    background: #d1fae5;
+    color: #065f46;
+  }
+
+  &.in-progress {
+    background: #dbeafe;
+    color: #1d4ed8;
+  }
+
+  &.assigned {
+    background: #fef3c7;
+  }
+
+  &.overdue {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+}
+
+.client {
+  margin-top: 6px;
+}
+
+.tag {
+  background: #f1f5f9;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+/* Description */
+.desc {
+  margin: 10px 0;
+}
+
+/* Dates */
+.dates {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #6b7280;
+}
+
+/* Submission */
+.submission {
+  background: #ecfdf5;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.outline-btn {
+  flex: 1;
+  border: 1px solid #e5e7eb;
+  padding: 8px;
+  border-radius: 8px;
+  background: white;
+}

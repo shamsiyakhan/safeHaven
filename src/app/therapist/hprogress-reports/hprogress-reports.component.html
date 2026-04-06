@@ -1,0 +1,48 @@
+<div class="reports-container">
+
+  <!-- Client Selector -->
+  <div class="clients">
+    <div 
+      class="client-card"
+      *ngFor="let c of clients"
+      [class.active]="c.name === selectedClient"
+      (click)="selectedClient = c.name"
+    >
+      <div class="avatar">{{ c.initials }}</div>
+      <div>
+        <h4>{{ c.name }}</h4>
+        <p>Anxiety Disorder</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="card" *ngFor="let s of stats">
+      <h4>{{ s.title }}</h4>
+      <h2>{{ s.value }}</h2>
+      <span class="tag">{{ s.tag }}</span>
+      <small class="green">{{ s.improvement }} improvement</small>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button [class.active]="activeTab==='progress'" (click)="activeTab='progress'">
+      Progress Trends
+    </button>
+    <button>Assessment History</button>
+    <button>Homework Completion</button>
+  </div>
+
+  <!-- Chart -->
+  <div class="chart">
+    <h3>Mental Health Progress Over Time</h3>
+
+    <!-- Placeholder Graph -->
+    <div class="graph">
+      <p>📈 Chart Placeholder (Integrate Chart.js / ngx-charts here)</p>
+    </div>
+  </div>
+
+</div>

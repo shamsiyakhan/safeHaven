@@ -1,0 +1,68 @@
+<div class="messages-container">
+
+  <!-- LEFT PANEL -->
+  <div class="left-panel">
+
+    <div class="search-box">
+      <input type="text" placeholder="Search conversations..." />
+    </div>
+
+    <div class="conversation"
+         *ngFor="let user of conversations"
+         (click)="selectUser(user)"
+         [class.active]="user === selectedUser">
+
+      <img [src]="user.image" />
+
+      <div class="info">
+        <h4>{{ user.name }}</h4>
+        <p>{{ user.message }}</p>
+      </div>
+
+      <span class="dot" *ngIf="user.active"></span>
+    </div>
+
+  </div>
+
+  <!-- RIGHT PANEL -->
+  <div class="right-panel">
+
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="user-info">
+        <img [src]="selectedUser.image" />
+        <div>
+          <h4>{{ selectedUser.name }}</h4>
+          <span class="status">Active now</span>
+        </div>
+      </div>
+
+      <div class="menu">⋮</div>
+    </div>
+
+    <!-- Chat Messages -->
+    <div class="chat-body">
+      <div *ngFor="let msg of messages"
+           [ngClass]="msg.sender === 'me' ? 'message me' : 'message them'">
+
+        <div class="bubble">
+          {{ msg.text }}
+          <span class="time">{{ msg.time }}</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Input -->
+    <div class="chat-input">
+      <input type="text" placeholder="Type your message..." />
+      <button>➤</button>
+    </div>
+
+    <p class="footer-text">
+      Messages are encrypted and secure. Response time may vary.
+    </p>
+
+  </div>
+
+</div>

@@ -1,0 +1,57 @@
+<div class="dashboard-container">
+
+  <!-- Welcome -->
+  <div class="welcome">
+    <h2>Welcome back, Dr. Anderson</h2>
+    <p>Here's what's happening with your practice today</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="card" *ngFor="let s of stats">
+      <p>{{ s.label }}</p>
+      <h3>{{ s.value }}</h3>
+      <span class="sub">{{ s.sub }}</span>
+    </div>
+  </div>
+
+  <!-- Main Grid -->
+  <div class="main-grid">
+
+    <!-- Schedule -->
+    <div class="schedule">
+      <div class="section-header">
+        <h3>Today's Schedule</h3>
+        <span class="date">Wednesday, Feb 25, 2026</span>
+      </div>
+
+      <div class="session" *ngFor="let item of schedule">
+        <div class="left">
+          <div class="avatar">{{ item.name[0] }}</div>
+
+          <div>
+            <h4>{{ item.name }}</h4>
+            <p>{{ item.type }}</p>
+          </div>
+        </div>
+
+        <div class="time">
+          {{ item.time }}
+          <span>50 min</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Activity -->
+    <div class="activity">
+      <h3>Recent Activity</h3>
+
+      <div class="activity-item" *ngFor="let a of activities">
+        <p>{{ a.text }}</p>
+        <span>{{ a.time }}</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>

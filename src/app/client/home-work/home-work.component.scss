@@ -1,0 +1,154 @@
+.homework-container {
+  padding: 24px;
+  background: #f8fafc;
+}
+
+/* Header */
+.header {
+  margin-bottom: 16px;
+
+  p {
+    color: #6b7280;
+  }
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+
+  p {
+    color: #6b7280;
+  }
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+
+  button {
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: none;
+    background: #e5e7eb;
+    cursor: pointer;
+
+    &.active {
+      background: white;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+  }
+}
+
+/* Task Card */
+.task-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+/* Top */
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.badge {
+  background: #dbeafe;
+  color: #1d4ed8;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+/* Description */
+.desc {
+  margin: 10px 0;
+  font-size: 14px;
+}
+
+/* Progress */
+.progress-section {
+  margin-top: 10px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+}
+
+.progress-bar {
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 10px;
+  margin-top: 6px;
+}
+
+.fill {
+  height: 100%;
+  background: #0f766e;
+  border-radius: 10px;
+}
+
+/* Actions */
+.actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.primary-btn {
+  background: #0f766e;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.outline-btn {
+  border: 1px solid #d1d5db;
+  background: white;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  border: 1px solid #e5e7eb;
+  background: white;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Tips */
+.tips {
+  margin-top: 20px;
+  background: #d1fae5;
+  padding: 16px;
+  border-radius: 12px;
+
+  ul {
+    margin-top: 8px;
+    padding-left: 18px;
+  }
+}

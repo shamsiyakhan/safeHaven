@@ -1,0 +1,88 @@
+<div class="requests-container">
+
+  <!-- Header -->
+  <div class="header">
+    <h2>Session Requests</h2>
+    <p>Review and manage therapy session requests from clients</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="card">
+      <p>Pending Requests</p>
+      <h3>{{ stats.pending }}</h3>
+    </div>
+
+    <div class="card">
+      <p>Accepted</p>
+      <h3>{{ stats.accepted }}</h3>
+    </div>
+
+    <div class="card">
+      <p>Urgent</p>
+      <h3>{{ stats.urgent }}</h3>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button (click)="activeTab='pending'" [class.active]="activeTab==='pending'">
+      Pending ({{ stats.pending }})
+    </button>
+
+    <button (click)="activeTab='accepted'" [class.active]="activeTab==='accepted'">
+      Accepted
+    </button>
+
+    <button (click)="activeTab='rejected'" [class.active]="activeTab==='rejected'">
+      Rejected
+    </button>
+  </div>
+
+  <!-- Request Cards -->
+  <div class="card request-card" *ngFor="let r of requests">
+
+    <!-- Top -->
+    <div class="top">
+      <div class="user">
+        <div class="avatar">{{ r.initials }}</div>
+        <div>
+          <h3>{{ r.name }}</h3>
+          <p>{{ r.age }} years old</p>
+        </div>
+      </div>
+
+      <div class="badges">
+        <span class="priority" [class.urgent]="r.priority==='urgent'">
+          {{ r.priority }}
+        </span>
+        <span class="status">{{ r.status }}</span>
+      </div>
+    </div>
+
+    <!-- Info -->
+    <div class="info">
+      <p>📄 Session Type: {{ r.type }}</p>
+      <p>📅 Preferred: {{ r.preferred }}</p>
+      <p>🕒 Requested on: {{ r.requested }}</p>
+    </div>
+
+    <!-- Tags -->
+    <div class="tags">
+      <span *ngFor="let tag of r.concerns">{{ tag }}</span>
+    </div>
+
+    <!-- Notes -->
+    <div class="notes">
+      {{ r.notes }}
+    </div>
+
+    <!-- Actions -->
+    <div class="actions">
+      <button class="primary-btn">✔ Accept Request</button>
+      <button class="outline-btn">✖ Decline</button>
+    </div>
+
+  </div>
+
+</div>
