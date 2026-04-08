@@ -1,0 +1,84 @@
+<div class="clients-container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h2>Client Management</h2>
+      <p>Manage and monitor all registered clients</p>
+    </div>
+
+    <button class="primary-btn">+ Add New Client</button>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="card" *ngFor="let s of stats">
+      <p>{{ s.title }}</p>
+      <h2>{{ s.value }}</h2>
+    </div>
+  </div>
+
+  <!-- Table Card -->
+  <div class="table-card">
+
+    <!-- Filters -->
+    <div class="table-header">
+      <h3>All Clients</h3>
+
+      <div class="actions">
+        <input placeholder="Search clients..." />
+        <button class="filter-btn">All Status</button>
+        <button class="export-btn">Export</button>
+      </div>
+    </div>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Client</th>
+          <th>Contact</th>
+          <th>Therapist</th>
+          <th>Sessions</th>
+          <th>Join Date</th>
+          <th>Next Session</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let c of clients">
+
+          <td>
+            <strong>{{ c.name }}</strong>
+          </td>
+
+          <td>
+            <div>{{ c.email }}</div>
+            <small>{{ c.phone }}</small>
+          </td>
+
+          <td>{{ c.therapist }}</td>
+
+          <td>{{ c.sessions }}</td>
+
+          <td>{{ c.joinDate }}</td>
+
+          <td>{{ c.nextSession }}</td>
+
+          <td>
+            <span class="status" [class]="c.status">
+              {{ c.status }}
+            </span>
+          </td>
+
+          <td>⋮</td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

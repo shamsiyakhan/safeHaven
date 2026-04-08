@@ -1,0 +1,96 @@
+.container {
+  padding: 24px;
+  background: #f8fafc;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.primary-btn {
+  background: #10b981;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+/* Plans */
+.plans {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.plan-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.plan-card ul {
+  padding-left: 16px;
+  margin: 10px 0;
+}
+
+.plan-card li {
+  margin-bottom: 6px;
+}
+
+/* Table */
+.table-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Status */
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.status.completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status.failed {
+  background: #fee2e2;
+  color: #991b1b;
+}

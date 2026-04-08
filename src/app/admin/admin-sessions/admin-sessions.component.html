@@ -1,0 +1,90 @@
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h2>Session Management</h2>
+      <p>Monitor and manage therapy sessions</p>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="card" *ngFor="let s of stats">
+      <p>{{ s.title }}</p>
+      <h2>{{ s.value }}</h2>
+    </div>
+  </div>
+
+  <!-- Table Section -->
+  <div class="table-card">
+
+    <!-- Top Controls -->
+    <div class="table-header">
+      <h3>All Sessions</h3>
+
+      <div class="actions">
+        <input placeholder="Search sessions..." />
+        <button>All Status</button>
+        <button>Export</button>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button
+        *ngFor="let tab of tabs"
+        [class.active]="activeTab === tab"
+        (click)="setTab(tab)">
+        {{ tab | titlecase }}
+      </button>
+    </div>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Client</th>
+          <th>Therapist</th>
+          <th>Date & Time</th>
+          <th>Type</th>
+          <th>Mode</th>
+          <th>Status</th>
+          <th>Notes</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let s of sessions">
+
+          <td>{{ s.client }}</td>
+
+          <td>{{ s.therapist }}</td>
+
+          <td>
+            <div>{{ s.date }}</div>
+            <small>{{ s.time }}</small>
+          </td>
+
+          <td>{{ s.type }}</td>
+
+          <td>{{ s.mode }}</td>
+
+          <td>
+            <span class="status" [class]="s.status">
+              {{ s.status }}
+            </span>
+          </td>
+
+          <td class="notes">{{ s.notes }}</td>
+
+          <td>⋮</td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

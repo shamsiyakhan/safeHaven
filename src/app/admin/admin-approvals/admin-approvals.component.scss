@@ -1,0 +1,115 @@
+.container {
+  padding: 24px;
+  background: #f8fafc;
+}
+
+/* Header */
+.header {
+  margin-bottom: 16px;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.tabs button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #e2e8f0;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  background: #0f172a;
+  color: white;
+}
+
+/* Search */
+.search-bar {
+  margin-bottom: 16px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Cards */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.approval-card {
+  display: flex;
+  justify-content: space-between;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  border-left: 4px solid orange;
+}
+
+.info p {
+  margin: 2px 0;
+  font-size: 13px;
+}
+
+.badge {
+  background: #fef3c7;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.outline {
+  border: 1px solid #cbd5f5;
+  background: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.approve {
+  background: #22c55e;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.reject {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 8px;
+}

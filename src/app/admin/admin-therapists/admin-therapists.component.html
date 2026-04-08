@@ -1,0 +1,91 @@
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h2>Therapist Management</h2>
+      <p>Manage therapist profiles and assignments</p>
+    </div>
+
+    <button class="primary-btn">+ Add New Therapist</button>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="card" *ngFor="let s of stats">
+      <p>{{ s.title }}</p>
+      <h2>{{ s.value }}</h2>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-card">
+
+    <!-- Filters -->
+    <div class="table-header">
+      <h3>All Therapists</h3>
+
+      <div class="actions">
+        <input placeholder="Search therapists..." />
+        <button>All Status</button>
+        <button>Export</button>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Therapist</th>
+          <th>Contact</th>
+          <th>Specialty</th>
+          <th>License</th>
+          <th>Clients</th>
+          <th>Sessions</th>
+          <th>Rating</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let t of therapists">
+
+          <td>
+            <strong>{{ t.name }}</strong>
+          </td>
+
+          <td>
+            <div>{{ t.email }}</div>
+            <small>{{ t.phone }}</small>
+          </td>
+
+          <td>{{ t.specialty }}</td>
+
+          <td>{{ t.license }}</td>
+
+          <td>{{ t.clients }}</td>
+
+          <td>{{ t.sessions }}</td>
+
+          <td>
+            <span *ngIf="t.rating; else noRating">
+              ⭐ {{ t.rating }} ({{ t.reviews }})
+            </span>
+            <ng-template #noRating>-</ng-template>
+          </td>
+
+          <td>
+            <span class="status" [class]="t.status">
+              {{ t.status }}
+            </span>
+          </td>
+
+          <td>⋮</td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

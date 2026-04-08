@@ -1,0 +1,86 @@
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h2>Subscription Management</h2>
+      <p>Manage subscription plans and monitor payments</p>
+    </div>
+
+    <button class="primary-btn">+ Create New Plan</button>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="card" *ngFor="let s of stats">
+      <p>{{ s.title }}</p>
+      <h2>{{ s.value }}</h2>
+    </div>
+  </div>
+
+  <!-- Plans -->
+  <div class="plans">
+
+    <div class="plan-card" *ngFor="let p of plans">
+
+      <h3>{{ p.name }}</h3>
+      <h2>{{ p.price }}</h2>
+
+      <p>{{ p.subscribers }} subscribers</p>
+      <p>{{ p.revenue }} revenue</p>
+
+      <ul>
+        <li *ngFor="let f of p.features">✔ {{ f }}</li>
+      </ul>
+
+      <span class="status active">active</span>
+
+    </div>
+
+  </div>
+
+  <!-- Payments -->
+  <div class="table-card">
+
+    <div class="table-header">
+      <h3>Recent Payments</h3>
+      <input placeholder="Search payments..." />
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Plan</th>
+          <th>Amount</th>
+          <th>Payment Method</th>
+          <th>Date</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let p of payments">
+
+          <td>{{ p.user }}</td>
+          <td>{{ p.plan }}</td>
+          <td>{{ p.amount }}</td>
+          <td>{{ p.method }}</td>
+          <td>{{ p.date }}</td>
+
+          <td>
+            <span class="status" [class]="p.status">
+              {{ p.status }}
+            </span>
+          </td>
+
+          <td>⋮</td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>

@@ -1,0 +1,107 @@
+.clients-container {
+  padding: 24px;
+  background: #f8fafc;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header p {
+  color: #6b7280;
+}
+
+.primary-btn {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+}
+
+/* Stats */
+.stats {
+  display: flex;
+  gap: 16px;
+  margin: 16px 0;
+}
+
+.card {
+  flex: 1;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+/* Table */
+.table-card {
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+}
+
+/* Table header */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.actions input {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.filter-btn,
+.export-btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background: white;
+}
+
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding: 10px;
+  color: #6b7280;
+}
+
+td {
+  padding: 12px 10px;
+  border-top: 1px solid #f1f5f9;
+}
+
+/* Status */
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.status.active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status.inactive {
+  background: #e5e7eb;
+}
+
+.status.pending {
+  background: #fef3c7;
+}

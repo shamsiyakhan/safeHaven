@@ -1,0 +1,71 @@
+<div class="admin-container">
+
+  <!-- Header -->
+  <div class="header">
+    <h2>Dashboard</h2>
+    <p>Welcome back! Here's what's happening today.</p>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="card" *ngFor="let s of stats">
+      <p>{{ s.title }}</p>
+      <h2>{{ s.value }}</h2>
+      <span [class.green]="s.positive" [class.red]="!s.positive">
+        {{ s.change }} vs last month
+      </span>
+    </div>
+  </div>
+
+  <!-- Charts -->
+  <div class="charts">
+
+    <div class="chart-card">
+      <h3>Sessions Overview</h3>
+      <div class="chart-placeholder">📈 Line Chart Here</div>
+    </div>
+
+    <div class="chart-card">
+      <h3>Revenue Trends</h3>
+      <div class="chart-placeholder">📊 Bar Chart Here</div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Section -->
+  <div class="bottom">
+
+    <!-- Recent Sessions -->
+    <div class="recent">
+      <h3>Recent Sessions</h3>
+
+      <div class="session" *ngFor="let s of sessions">
+        <div>
+          <h4>{{ s.name }}</h4>
+          <p>{{ s.therapist }}</p>
+          <small>{{ s.time }}</small>
+        </div>
+
+        <span class="status" [class]="s.status">
+          {{ s.status }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Top Therapists -->
+    <div class="top-therapists">
+      <h3>Top Therapists</h3>
+
+      <div class="therapist" *ngFor="let t of therapists; let i = index">
+        <span class="rank">{{ i + 1 }}</span>
+
+        <div>
+          <h4>{{ t.name }}</h4>
+          <p>{{ t.sessions }} sessions • ⭐ {{ t.rating }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

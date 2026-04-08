@@ -1,0 +1,91 @@
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h2>Content Library</h2>
+      <p>Manage podcasts, videos, and motivational content</p>
+    </div>
+
+    <button class="primary-btn">+ Upload Content</button>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="card" *ngFor="let s of stats">
+      <p>{{ s.title }}</p>
+      <h2>{{ s.value }}</h2>
+    </div>
+  </div>
+
+  <!-- Table Section -->
+  <div class="table-card">
+
+    <!-- Controls -->
+    <div class="table-header">
+      <h3>Content Management</h3>
+
+      <div class="actions">
+        <input placeholder="Search content..." />
+        <button>All Categories</button>
+        <button>Export</button>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button
+        *ngFor="let tab of tabs"
+        [class.active]="activeTab === tab"
+        (click)="setTab(tab)">
+        {{ tab | titlecase }}
+      </button>
+    </div>
+
+    <!-- Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>Content</th>
+          <th>Category</th>
+          <th>Author</th>
+          <th>Duration</th>
+          <th>Views</th>
+          <th>Upload Date</th>
+          <th>Status</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let c of contentList">
+
+          <td>
+            <strong>{{ c.title }}</strong>
+          </td>
+
+          <td>{{ c.category }}</td>
+
+          <td>{{ c.author }}</td>
+
+          <td>{{ c.duration }}</td>
+
+          <td>{{ c.views }}</td>
+
+          <td>{{ c.date }}</td>
+
+          <td>
+            <span class="status" [class]="c.status">
+              {{ c.status }}
+            </span>
+          </td>
+
+          <td>⋮</td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
